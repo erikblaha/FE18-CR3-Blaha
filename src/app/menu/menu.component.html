@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-xs-1">
+
+    <div *ngFor="let product of products; index as id">
+      <div class="card" style="width: 18rem;">
+        <img src="{{ product.image}}" class="card-img-top" alt="Many meals">
+        <div class="card-body">
+          <h5 class="card-title">{{product.name}}</h5>
+
+        </div>
+        <div *ngIf="product.availability then thenBlock else elseBlock"></div>
+        <ng-template #thenBlock>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{product.description}}</li>
+            <li class="list-group-item">{{product.price | currency:'EUR'}}</li>
+
+          </ul>
+          <div>
+            <a class="btn btn-success" routerLink="/menu/{{ id }}">Details</a>
+            <p class="btn btn-warning" (click)="addToOrder(product)">Order</p>
+          </div>
+        </ng-template>
+        <ng-template #elseBlock>Not available</ng-template>
+      </div>
+    </div>
+  </div>

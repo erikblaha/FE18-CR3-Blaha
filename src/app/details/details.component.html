@@ -1,0 +1,19 @@
+<div class="container my-5">
+    <h1>One of our best meals</h1>
+
+
+    <div class="d-flex">
+        <div class="flex-shrink-0">
+            <img src="{{product.image}}" alt="your order meals">
+        </div>
+        <div class="flex-grow-1 ms-3">
+           {{product.name}} 
+           <br>
+           {{product.price | currency:'EUR'}}
+           <br> 
+           {{product.description}} 
+           <br>
+           <p href="#" class="btn btn-warning">Add to order</p>
+        </div>
+    </div>
+</div>

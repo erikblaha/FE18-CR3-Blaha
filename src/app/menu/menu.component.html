@@ -2,7 +2,7 @@
   <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-xs-1">
 
     <div *ngFor="let product of products; index as id">
-      <div class="card" style="width: 18rem;">
+      <div class="card mb-3" style="width: 18rem;">
         <img src="{{ product.image}}" class="card-img-top" alt="Many meals">
         <div class="card-body">
           <h5 class="card-title">{{product.name}}</h5>
@@ -17,7 +17,7 @@
           </ul>
           <div>
             <a class="btn btn-success" routerLink="/menu/{{ id }}">Details</a>
-            <p class="btn btn-warning" (click)="addToOrder(product)">Order</p>
+            <button class="btn btn-warning" (click)="addToOrder(product)">Order</button>
           </div>
         </ng-template>
         <ng-template #elseBlock>Not available</ng-template>
